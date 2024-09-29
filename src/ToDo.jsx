@@ -62,7 +62,7 @@ function ToDo() {
       <div className="p-10 flex justify-center">
         <ol>
           {values.map((task, index) => (
-            <div className="m-5 flex justify-around">
+            <div className="m-5 p-10 flex border-2 bg-gray-500 justify-around">
               <li key={index}>
                 <span className="font-Arial flex justify-around text-white m-10">
                   {task}
