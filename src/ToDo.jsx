@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ToDo() {
-  const [values, setValues] = useState(["asdasd", "Asdw"]);
+  const [values, setValues] = useState(["Eat", "Shower"]);
   const [value, setValue] = useState("");
   var test = "asd";
 
@@ -40,27 +40,56 @@ function ToDo() {
   }
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">ToDo</h1>
-      {console.log("ASdasdsa")}
-      <input
-        type="text"
-        name="asdasd"
-        placeholder="Enter a task"
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button onClick={addTask}>Add</button>
+    <div className="flex flex-col">
+      {/* border-2 border-red-300 */}
+      <div className="flex justify-center m-10 ">
+        <h1 className="text-white text-3xl font-Arial">doer</h1>
+      </div>
+      {/* border-2 border-green-300 */}
+      <div className="flex justify-center ">
+        <input
+          className="border-2 border-gray-300 peer h-10 w-50% rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-400"
+          type="text"
+          name="asdasd"
+          placeholder="Enter a task"
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <div className="ml-10 rounded-lg px-4 py-2 bg-gray-600 text-gray-100 hover:bg-gray-700 duration-300">
+          <button onClick={addTask}>Add</button>
+        </div>
+      </div>
 
-      <ol>
-        {values.map((task, index) => (
-          <li key={index}>
-            <span>{task}</span>
-            <button onClick={() => deleteTask(index)}>Delete</button>
-            <button onClick={() => moveTaskUp(index)}>Move Up</button>
-            <button onClick={() => moveTaskDown(index)}>Move Down</button>
-          </li>
-        ))}
-      </ol>
+      <div className="p-10 flex justify-center">
+        <ol>
+          {values.map((task, index) => (
+            <div className="m-5 flex justify-around">
+              <li key={index}>
+                <span className="font-Arial flex justify-around text-white m-10">
+                  {task}
+                </span>
+                <button
+                  className="ml-10 rounded-lg px-4 py-2 bg-gray-600 text-gray-100 hover:bg-gray-700 duration-300"
+                  onClick={() => deleteTask(index)}
+                >
+                  Delete
+                </button>
+                <button
+                  className="ml-10 rounded-lg px-4 py-2 bg-gray-600 text-gray-100 hover:bg-gray-700 duration-300"
+                  onClick={() => moveTaskUp(index)}
+                >
+                  Move Up
+                </button>
+                <button
+                  className="ml-10 rounded-lg px-4 py-2 bg-gray-600 text-gray-100 hover:bg-gray-700 duration-300"
+                  onClick={() => moveTaskDown(index)}
+                >
+                  Move Down
+                </button>
+              </li>
+            </div>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }

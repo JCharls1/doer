@@ -1,7 +1,11 @@
 import ToDo from "./ToDo";
 
 function App() {
-  return <ToDo></ToDo>;
+  return (
+    <div className="overflow-auto h-screen bg-gray-700">
+      <ToDo></ToDo>
+    </div>
+  );
 }
 
 export default App;
