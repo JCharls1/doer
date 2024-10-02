@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Task from "./task";
+import Task from "./Task";
 
 function ToDo() {
   const [values, setValues] = useState(["Eat", "Shower"]);
